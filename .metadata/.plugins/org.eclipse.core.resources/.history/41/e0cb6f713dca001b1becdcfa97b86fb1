@@ -1,0 +1,5 @@
+package com.eventosapp.repository;
+
+public interface EventoRepository {
+
+}
