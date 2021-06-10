@@ -1,0 +1,5 @@
+package com.eventosapp.data;
+
+public class DataConfiguration {
+
+}
