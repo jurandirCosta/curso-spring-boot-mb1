@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Projetos Michelli velho\eventoapp"/>
+			<item value="D:\cobranca"/>
 			<item value="D:\Michelli"/>
 		</list>
 		<list key="projectNameTemplate">

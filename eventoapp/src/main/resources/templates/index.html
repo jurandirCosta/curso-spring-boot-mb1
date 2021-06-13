@@ -1,5 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+
+<head>
+	<title>EventosApp</title>
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>	  
 <body>
-<h3>Olá Mundo com Spring Boot</h3>
+	<div class ="container">	
+		<h1>Lista de Eventos</h1>
+		<h3><a href="/cadastrarEvento">Cadastrar Evento</a></h3>
+		
+				
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horario</th>
+				<th>Deletar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				<td><span th:text="${evento.nome}"></span></td>
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td><span th:text="${evento.horario}"></span></td>
+				<td><i class="material-icons left">delete</i></a></td>
+			</tr>
+		</tbody>
+	
+	</table>
+	</div>		
 </body>
 </html>
