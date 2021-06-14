@@ -19,47 +19,37 @@
 		      <a href="#!" class="brand-logo">Aplicativo de Eventos</a>
 		    </div>
 		  </nav>
-
+	<br>
 		
 		<div class="row">
 		    <div class="col s12 ">
 		      <div class="card">
 		        <div class="card-content bla-textck">
 		<div class="row">
-			<div class="col s12 m6 l6"><h3>Lista de Eventos</h3></div>
+			<div class="col s12 m6 l6"><h3>Evento</h3></div>
 			<div class="col s12 m6 l6">
-				<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
-			</div>		
+				<h3><a href="/evento" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
+			</div>	
+			
+			<div th:each="evento : ${evento}" class="container">
+				<div class="row">
+					<p><span th:text="${evento.nome}"></span></p>
+					<p><span th:text="${evento.local}"></span></p>
+					<p><span th:text="${evento.data}"></span></p>
+					<p><span th:text="${evento.horario}"></span></p>
+				</div>
+			</div>
+				
 			
 		</div>
-			 <div class="card">
-				<div class="card-content">
-		<table class="responsive-table">
-			<thead>
-				<tr>
-					<th class="center">Nome</th>
-					<th>Local</th>
-					<th>Data</th>
-					<th>Horario</th>
-					<th class="left">Ações</th>
-				</tr>
-			</thead>
-		<tbody>
-			<tr th:each="evento : ${eventos}">
-				<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
-				<td><span th:text="${evento.local}"></span></td>
-				<td><span th:text="${evento.data}"></span></td>
-				<td><span th:text="${evento.horario}"></span></td>
-				<td><i class="material-icons center red-text">delete</i></a></td>
-			</tr>
-		</tbody>
-	
-		</table>
-	  </div>
+		 <div class="card">
+		<div class="card-content">
+		
 	 </div>
-    </div>
+	</div>
    </div>
   </div>
+ </div>
  </div>
 	
 	

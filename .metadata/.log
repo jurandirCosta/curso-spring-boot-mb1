@@ -4003,3 +4003,220 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 10:08:31.976
 !MESSAGE executing callback sts4.classpath.CNZsmCQg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:09:50.762
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CNZsmCQg
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:09:50.762
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.CNZsmCQg
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:09:50.763
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:09:50.763
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CNZsmCQg => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:09.607
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:09.607
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@705bf8c0[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:09.608
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.891
+!MESSAGE Boot LS startup time from start to initialized: 1282ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.941
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MwvDhmAkisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.941
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.941
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.942
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.942
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.942
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MwvDhmAk => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.945
+!MESSAGE classpath=104 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.947
+!MESSAGE buffering callback sts4.classpath.MwvDhmAk eventoapp false 104
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:10.947
+!MESSAGE executing callback sts4.classpath.MwvDhmAk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-14 11:32:11.187
+!MESSAGE executing callback sts4.classpath.MwvDhmAk SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-06-14 11:35:01.065
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.tm4e.ui 4 0 2021-06-14 11:39:44.193
+!MESSAGE Argument not valid
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+	at org.eclipse.swt.SWT.error(SWT.java:4870)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.SWT.error(SWT.java:4775)
+	at org.eclipse.swt.custom.StyledText.setStyleRanges(StyledText.java:10256)
+	at org.eclipse.swt.custom.StyledText.replaceStyleRanges(StyledText.java:8008)
+	at org.eclipse.jface.text.TextViewer.addPresentation(TextViewer.java:4693)
+	at org.eclipse.jface.text.TextViewer.changeTextPresentation(TextViewer.java:4770)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler.applyTextRegionCollection(TMPresentationReconciler.java:681)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler.colorize(TMPresentationReconciler.java:580)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler$InternalListener.textChanged(TMPresentationReconciler.java:309)
+	at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2709)
+	at org.eclipse.jface.text.TextViewer.fireRedrawChanged(TextViewer.java:4915)
+	at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4955)
+	at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4923)
+	at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:5005)
+	at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:4979)
+	at org.eclipse.jface.text.TextViewer$RewriteTarget.setRedraw(TextViewer.java:1000)
+	at org.eclipse.jface.text.TextViewer$DocumentRewriteSessionListener.documentRewriteSessionChanged(TextViewer.java:1392)
+	at org.eclipse.jface.text.AbstractDocument.fireRewriteSessionChanged(AbstractDocument.java:1432)
+	at org.eclipse.jface.text.AbstractDocument.stopRewriteSession(AbstractDocument.java:1513)
+	at org.eclipse.core.internal.filebuffers.SynchronizableDocument.stopRewriteSession(SynchronizableDocument.java:108)
+	at org.eclipse.jface.text.TextViewer.shift(TextViewer.java:4275)
+	at org.eclipse.jface.text.TextViewer.doOperation(TextViewer.java:3883)
+	at org.eclipse.jface.text.source.SourceViewer.doOperation(SourceViewer.java:1064)
+	at org.eclipse.jface.text.source.projection.ProjectionViewer.doOperation(ProjectionViewer.java:1466)
+	at org.eclipse.ui.texteditor.ShiftAction.lambda$0(ShiftAction.java:87)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.texteditor.ShiftAction.run(ShiftAction.java:87)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationCodeTrigger.verifyKey(AbstractTextEditor.java:782)
+	at org.eclipse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:481)
+	at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:70)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:766)
+	at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:6101)
+	at org.eclipse.swt.custom.StyledText.lambda$1(StyledText.java:5795)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1094)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1519)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4882)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:345)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4760)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.tm4e.ui 4 0 2021-06-14 11:40:01.148
+!MESSAGE Argument not valid
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+	at org.eclipse.swt.SWT.error(SWT.java:4870)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.SWT.error(SWT.java:4775)
+	at org.eclipse.swt.custom.StyledText.setStyleRanges(StyledText.java:10256)
+	at org.eclipse.swt.custom.StyledText.replaceStyleRanges(StyledText.java:8008)
+	at org.eclipse.jface.text.TextViewer.addPresentation(TextViewer.java:4693)
+	at org.eclipse.jface.text.TextViewer.changeTextPresentation(TextViewer.java:4770)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler.applyTextRegionCollection(TMPresentationReconciler.java:681)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler.colorize(TMPresentationReconciler.java:580)
+	at org.eclipse.tm4e.ui.text.TMPresentationReconciler$InternalListener.textChanged(TMPresentationReconciler.java:309)
+	at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2709)
+	at org.eclipse.jface.text.TextViewer.fireRedrawChanged(TextViewer.java:4915)
+	at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4955)
+	at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4923)
+	at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:5005)
+	at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:4979)
+	at org.eclipse.jface.text.TextViewer$RewriteTarget.setRedraw(TextViewer.java:1000)
+	at org.eclipse.jface.text.TextViewer$DocumentRewriteSessionListener.documentRewriteSessionChanged(TextViewer.java:1392)
+	at org.eclipse.jface.text.AbstractDocument.fireRewriteSessionChanged(AbstractDocument.java:1432)
+	at org.eclipse.jface.text.AbstractDocument.stopRewriteSession(AbstractDocument.java:1513)
+	at org.eclipse.core.internal.filebuffers.SynchronizableDocument.stopRewriteSession(SynchronizableDocument.java:108)
+	at org.eclipse.jface.text.TextViewer.shift(TextViewer.java:4275)
+	at org.eclipse.jface.text.TextViewer.doOperation(TextViewer.java:3883)
+	at org.eclipse.jface.text.source.SourceViewer.doOperation(SourceViewer.java:1064)
+	at org.eclipse.jface.text.source.projection.ProjectionViewer.doOperation(ProjectionViewer.java:1466)
+	at org.eclipse.ui.texteditor.ShiftAction.lambda$0(ShiftAction.java:87)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.texteditor.ShiftAction.run(ShiftAction.java:87)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationCodeTrigger.verifyKey(AbstractTextEditor.java:782)
+	at org.eclipse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:481)
+	at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:70)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:766)
+	at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:6101)
+	at org.eclipse.swt.custom.StyledText.lambda$1(StyledText.java:5795)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1094)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1519)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4882)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:345)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4760)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
