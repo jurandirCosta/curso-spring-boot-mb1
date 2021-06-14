@@ -2,18 +2,63 @@
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title>EventosApp</title>
+	<title>Cadastro de Eventos</title>
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<h1>Cadastro de Eventos</h1>
-	<form method="POST">
-		nome: <input type="text" value="" name="nome"/>
-		Local: <input type="text" value="" name="local"/>
-		Data: <input type="date" value="" name="data"/>
-		Horário: <input type="text" value="" name="horário"/>
-		
-		<button type="submit">Salvar</button>
-		
-	</form>
+		 <nav>
+		    <div class="nav-wrapper">
+		      <a href="#!" class="brand-logo">Aplicativo de Eventos</a>
+		    </div>
+		  </nav>
+	<br>
+	<div class ="container">
+		 <div class="row">
+		 	<div class="col s12 m6 z-depth-2">
+			
+			  
+					<div class="card-title"><h4>Cadastro de Eventos</h4>
+					<h4><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i> Lista de Eventos</a></h4>
+				
+							<form method="POST">
+								<div class="input-field col s12">
+									<input type="text" name="nome" id="nome" class="autocomplete"/>
+									<label for="nome">nome</label>
+								</div>
+								<div class="input-field col s12">
+								   <input type="text"name="local" id="local" class="autocomplete"/>
+								   <label for="nome">local</label>
+								</div>
+								<div class="input-field col s6">	
+									<input type="date" name="data" id="data" class="autocomplete"/>
+									<label for="data">data</label>
+								</div>
+								<div class="input-field col s6">	
+									<input type="text" name="horario" id="horario" class="autocomplete"/>
+									<label for="horario">horario</label>
+								</div>
+								<div class="row">
+									<div class="col s9 offset-s2">
+									<a href="#"></a>
+									<button type="submit" class="waves-effect waves-light btn right">Salvar</button>
+									</div>
+								</div>		
+						</form>
+							
+						
+			   		</div>
+				</div>	
+			</div>	
+	 	</div>	
+	
+	
+<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>		
 </body>
 </html>	

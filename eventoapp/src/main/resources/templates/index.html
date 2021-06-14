@@ -14,28 +14,38 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>	  
 <body>
+	 <nav>
+		    <div class="nav-wrapper">
+		      <a href="#!" class="brand-logo">Aplicativo de Eventos</a>
+		    </div>
+		  </nav>
+	<br>
 	<div class ="container">	
-		<h1>Lista de Eventos</h1>
-		<h3><a href="/cadastrarEvento" a class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i> Cadastrar Evento</a></h3>
 		
-				
-	<table class="container">
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Local</th>
-				<th>Data</th>
-				<th>Horario</th>
-				<th>Deletar</th>
-			</tr>
-		</thead>
+		<div class="row">
+			<div class="col s12 m6 l6"><h3>Lista de Eventos</h3></div>
+			<div class="col s12 m6 l6">
+				<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn right"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
+			</div>		
+			
+		</div>
+		<table class="z-depth-2">
+			<thead>
+				<tr>
+					<th class="center">Nome</th>
+					<th>Local</th>
+					<th>Data</th>
+					<th>Horario</th>
+					<th class="left">Ações</th>
+				</tr>
+			</thead>
 		<tbody>
 			<tr th:each="evento : ${eventos}">
-				<td><span th:text="${evento.nome}"></span></td>
+				<td class="col m5"><span th:text="${evento.nome}"></span></td>
 				<td><span th:text="${evento.local}"></span></td>
 				<td><span th:text="${evento.data}"></span></td>
 				<td><span th:text="${evento.horario}"></span></td>
-				<td><i class="material-icons left">delete</i></a></td>
+				<td><i class="material-icons center">delete</i></a></td>
 			</tr>
 		</tbody>
 	
