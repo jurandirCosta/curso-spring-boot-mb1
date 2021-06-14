@@ -18,42 +18,77 @@
 		    <div class="nav-wrapper #2962ff blue accent-4">
 		      <a href="#!" class="brand-logo">Aplicativo de Eventos</a>
 		    </div>
-		  </nav>
+	 </nav>
 	<br>
 		
-		<div class="row">
-		    <div class="col s12 ">
-		      <div class="card">
-		        <div class="card-content bla-textck">
-		<div class="row">
-			<div class="col s12 m6 l6"><h3>Evento</h3></div>
-			<div class="col s12 m6 l6">
-				<h3><a href="/evento" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
-			</div>	
-			
-			<div th:each="evento : ${evento}" class="container">
-				<div class="row">
-					<p><span th:text="${evento.nome}"></span></p>
-					<p><span th:text="${evento.local}"></span></p>
-					<p><span th:text="${evento.data}"></span></p>
-					<p><span th:text="${evento.horario}"></span></p>
+<div class="row">
+   <div class="col s12 ">
+	<div class="card">
+		<div class="card-content bla-textck">
+			<div class="row">
+				<div class="col s12 m6 l6"><h3>Evento</h3></div>
+				<div class="col s12 m6 l6">
+					<h3><a href="/evento" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
+				</div>	
+			</div>				
+			 <div class="card">
+					<div class="card-content">
+<!--					<table class="responsive-table">
+						<thead>
+							<tr>
+								<th class="center">Nome</th>
+								<th>Local</th>
+								<th>Data</th>
+								<th>Horario</th>
+								<th class="left">Ações</th>
+							</tr>
+						</thead>-->
+		<!--			</thead>
+			<tbody>
+				<tr th:each="evento : ${eventos}">
+					<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+					<td><i class="material-icons center red-text">delete</i></a></td>
+				</tr>
+			</tbody>-->
+					<div th:each="evento : ${evento}" class="container">
+					<div class="row">
+						<p><span th:text="${evento.nome}"></span></p>
+						<p><span th:text="${evento.local}"></span></p>
+						<p><span th:text="${evento.data}"></span></p>
+						<p><span th:text="${evento.horario}"></span></p>
+					</div>
 				</div>
+		</table>
+		<form method="POST">
+			<div class="input-field col s12">
+				<input type="text" value="" name="nomeConvidado" class="autocomplete"/>
+				<label for="nomeConvidado">nome do convidado</label>
 			</div>
-				
-			
-		</div>
-		 <div class="card">
-		<div class="card-content">
+			<div class="input-field col s12">
+				<input type="text" value="" name="rg" class="autocomplete"/>
+				<label for="rg">RG</label>
+			</div>
+			<div class="row">
+				<div class="col s9 offset-s2">
+				<a href="#"></a>
+				<button type="submit" class="waves-effect waves-light btn right #2979ff blue accent-3">Adicionar</button>
+				</div>
+			</div>	
+	   </form>
 		
+	  </div>
 	 </div>
-	</div>
+					
+				
+			</div>
+		 </div>
+		</div>
    </div>
   </div>
- </div>
- </div>
-	
-	
-	
+ 	
 	<!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>	
 </body>
