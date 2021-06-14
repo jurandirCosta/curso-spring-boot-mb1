@@ -6,10 +6,10 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Convidado {
-
+	
 	@Id
 	private String rg;
-	private String nomeConvidado;
+	private String convidado;
 	
 	@ManyToOne
 	private Evento evento;
@@ -22,12 +22,12 @@ public class Convidado {
 		this.rg = rg;
 	}
 
-	public String getnomeConvidado() {
-		return nomeConvidado;
+	public String getConvidado() {
+		return convidado;
 	}
 
-	public void setnomeConvidado(String nomeConvidado) {
-		this.nomeConvidado = nomeConvidado;
+	public void setConvidado(String convidado) {
+		this.convidado = convidado;
 	}
 
 	public Evento getEvento() {
@@ -37,7 +37,6 @@ public class Convidado {
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
-	
 	
 	
 }

@@ -43,6 +43,9 @@ import com.eventosapp.repository.EventoRepository;
 	  Evento evento = er.findByCodigo(codigo);
 	  ModelAndView mv = new ModelAndView("evento/detalhesEvento");
 	  mv.addObject("evento", evento);
+	  
+	  Iterable<Convidado> convidados = cr.findByEvento(evento);
+	  mv.addObject("convidados", convidados);
 	  return mv;
   }
  
