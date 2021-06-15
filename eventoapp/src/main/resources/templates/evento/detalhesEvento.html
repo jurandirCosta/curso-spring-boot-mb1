@@ -39,7 +39,10 @@
 						<p> Data: <span th:text="${evento.data}"></span></p>
 						<p> Horário: <span th:text="${evento.horario}"></span></p>
 					</div>
-				</div>
+			</div>
+			
+			<th:block th:include="mensagemValidacao"></th:block>
+			
 		<form method="POST" class="card-content">
 			<div class="input-field col s8">
 				<input type="text" value="" name="convidado" class="autocomplete"/>

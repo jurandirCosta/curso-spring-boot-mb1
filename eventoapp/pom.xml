@@ -27,24 +27,17 @@
           	<groupId>org.springframework.boot</groupId>
          	 <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        
-	
-	
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java 
-		<dependency>
-		    <groupId>mysql</groupId>
-		    <artifactId>mysql-connector-java</artifactId>
-		     <version>5.1.40</version> 
- 		</dependency> -->
-
-		 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <!-- <version>8.0.25</version> -->
 		</dependency>
-		 
+		<dependency>
+	    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		<!--     <version>7.0.0.Final</version> -->
+	    </dependency> 
 		
 		
 		<!-- <dependency>

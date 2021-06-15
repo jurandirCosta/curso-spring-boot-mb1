@@ -3,12 +3,15 @@ package com.eventosapp.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Convidado {
 	
 	@Id
 	private String rg;
+	
+	@NotEmpty
 	private String convidado;
 	
 	@ManyToOne
