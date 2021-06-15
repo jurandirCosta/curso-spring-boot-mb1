@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	
 
 <head>
@@ -14,12 +15,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>	  
 <body>
-	 <nav>
-		    <div class="nav-wrapper #2962ff blue accent-4">
-		      <a href="#!" class="brand-logo">Aplicativo de Eventos</a>
-		    </div>
-		  </nav>
-
+	
+	<div th:insert="~{navbar :: cabecalho}"></div>
 		
 		<div class="row">
 		    <div class="col s12 ">
@@ -40,7 +37,7 @@
 					<th>Local</th>
 					<th>Data</th>
 					<th>Horario</th>
-					<th class="left">Ações</th>
+					<th class="center">Ações</th>
 				</tr>
 			</thead>
 		<tbody>
@@ -50,7 +47,8 @@
 				<td><span th:text="${evento.local}"></span></td>
 				<td><span th:text="${evento.data}"></span></td>
 				<td><span th:text="${evento.horario}"></span></td>
-				<td><i class="material-icons center red-text">delete</i></a></td>
+				<td><i class="material-icons green-text">update</i></a></td>
+				<td><i class="material-icons red-text">delete</i></a></td>
 			</tr>
 		</tbody>
 	
