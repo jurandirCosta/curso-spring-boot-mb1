@@ -21,18 +21,23 @@
 	<div class="card ">
 		<div class="card-content bla-textck">
 			<div class="row">
-				<div class="col s12 l6"><h4>Evento:</h4></div>
+				<div class="col s12 l6"><h4>Cadastro de Convidados</h4></div>
 				<div class="col s12 l6">
 					<h3><a href="/eventos" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h3>
 				</div>	
 			</div>				
 			<div class="row">	
 				<div class="col s3 fontevento">
+				   <div class="card blue-grey darken-1">
+        			<div class="card-content white-text">
+          				<span class="card-title">Evento:</span>
 					<div th:each="evento : ${evento}">
 							<p> Nome: <span th:text="${evento.nome}"></span></p>
 							<p> Local: <span th:text="${evento.local}"></span></p>
 							<p> Data: <span th:text="${evento.data}"></span></p>
-							<p> Horário: <span th:text="${evento.horario}"></span></p>
+							<p> Horário: <span th:text="${evento.horario}" hs></span></p>
+						</div>
+        				</div>	
  				    </div>	
 				</div>
 				<div class="col s6">
@@ -63,8 +68,9 @@
 	    		<div class="col s3 m6">	   
 			 		<div class="card">
 			 		 	<div class="row">
-				 		<h5 class="col s12">Lista de Convidados:</h5>
-				 		 </div> 	
+					 		<div class="card-content black-text center">
+ 						 		<span class="card-title #e0e0e0 grey lighten-2">Lista de Convidados</span>
+				 		 		
 						   <table class="responsive-table striped centered">
 								<thead>
 									<tr>
@@ -79,6 +85,7 @@
 								</tr>
 								</tbody>
 							</table>
+							</div> 
 			  			</div>
 	  			</div>
      		</div>
