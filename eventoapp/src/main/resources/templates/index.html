@@ -37,7 +37,7 @@
 					<th>Local</th>
 					<th>Data</th>
 					<th>Horario</th>
-					<th class="center">Ações</th>
+					<th class="right">Ações</th>
 				</tr>
 			</thead>
 				<tbody>
@@ -47,9 +47,9 @@
 						<td><span th:text="${evento.local}"></span></td>
 						<td><span th:text="${evento.data}"></span></td>
 						<td><span th:text="${evento.horario}"></span></td>
-						<td class="botao-green"><i class="material-icons green-text">update</i></a></td>
-						<td class="botao-red"><i class="material-icons red-text">delete</i></a></td>
-						
+						<td class="right"><a class="botao-green" href=""><i class="material-icons green-text">update</i></a></td>
+						<td><a class="botao-red" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">
+							<i class="material-icons red-text">delete</i></a></td>
 					</tr>
 				</tbody>
 			

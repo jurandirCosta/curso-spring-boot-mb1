@@ -40,8 +40,7 @@ import com.eventosapp.repository.EventoRepository;
 	  attributes.addFlashAttribute("mensagem", "Evento adicionado com sucesso!");
 	  return "redirect:/cadastrarEvento";
  }
- 
-	
+   	
   @RequestMapping("/eventos")
   public ModelAndView listaEventos(){
 	  ModelAndView mv = new ModelAndView("index");
@@ -60,6 +59,14 @@ import com.eventosapp.repository.EventoRepository;
 	  mv.addObject("convidados", convidados);
 	  return mv;
   }
+  
+  @RequestMapping("/deletar")
+  public String deletarEvento(long codigo, RedirectAttributes attributes) {
+	  Evento evento = er.findByCodigo(codigo);
+	  er.delete(evento);
+	  attributes.addFlashAttribute("mensagem", "Título excluído com sucesso!");
+	  return "redirect:/eventos";
+  }
  
   @RequestMapping(value="/{codigo}", method=RequestMethod.POST)
   public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,
@@ -74,4 +81,18 @@ import com.eventosapp.repository.EventoRepository;
 	  attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
 	  return "redirect:/{codigo}";  
   }
+  
+  
+  @RequestMapping("/deletarConvidado")
+  public String deletarConvidado(String rg) {
+	  Convidado convidado = cr.findByRg(rg);
+	  cr.delete(convidado);
+	  
+	  Evento evento = convidado.getEvento();
+	  long codigoLong = evento.getCodigo();
+	 	  
+	  String codigo = new String("" + codigoLong);
+	  return "redirect:/" + codigo;
+  }
+  
 }

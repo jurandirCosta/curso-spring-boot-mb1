@@ -76,12 +76,16 @@
 									<tr>
 										<th>Convidado</th>
 										<th>RG</th>
+										<th class="center">Ações</th>
 									</tr>
 							</thead>
 							<tbody>
 								<tr th:each="convidado : ${convidados}">
 									<td><span th:text="${convidado.convidado}"></span></td>
 									<td><span th:text="${convidado.rg}"></span></td>
+									<td class="botao-green" href=""><a><i class="material-icons green-text">update</i></a></td>
+									<td><a class="botao-red" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}">
+										<i class="material-icons red-text">delete</i></a></td>
 								</tr>
 								</tbody>
 							</table>

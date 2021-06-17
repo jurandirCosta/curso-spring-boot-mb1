@@ -7,5 +7,5 @@ import com.eventosapp.models.Evento;
 
 public interface ConvidadoRepository extends CrudRepository<Convidado, String>{
 	Iterable<Convidado> findByEvento(Evento evento);
-	/* public void save(Evento evento); */
+	Convidado findByRg(String rg);
 }
