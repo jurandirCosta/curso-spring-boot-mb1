@@ -42,12 +42,16 @@
 			</thead>
 				<tbody>
 					<tr th:each="evento : ${eventos}">
+						
 						<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}">
-						    <span th:text="${evento.nome}"></span></a></td>
+							<span th:text="${evento.nome}"></span></a></td>
 						<td><span th:text="${evento.local}"></span></td>
 						<td><span th:text="${evento.data}"></span></td>
 						<td><span th:text="${evento.horario}"></span></td>
-						<td class="right"><a class="botao-green" href=""><i class="material-icons green-text">update</i></a></td>
+							
+     					<td class="right"><a class="botao-green" th:href="${(#mvc.url('EC#edicao').arg(0, evento.codigo)).build()}">
+							<i class="material-icons green-text">edit</i></a></td> 
+
 						<td><a class="botao-red" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">
 							<i class="material-icons red-text">delete</i></a></td>
 					</tr>

@@ -14,12 +14,11 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 public class Evento implements Serializable{
 	
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Long codigo;
 	
 	@NotEmpty
 	private String nome;
@@ -33,10 +32,10 @@ public class Evento implements Serializable{
 	@OneToMany( mappedBy="evento", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Convidado> convidados;
 	
-	public long getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(long codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 		
