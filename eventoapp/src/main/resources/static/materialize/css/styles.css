@@ -1,3 +1,41 @@
+/* Lista de Eventos*/
+nav{
+	margin-left: 10px;
+	margin-right: 15px;
+	width: 99%;
+}
+
+
+.nav .nav-wrapper{
+	margin-left: 10px;
+	margin-right: 0px;
+	
+}
+
+.nav-wrapper #2962ff blue accent-4{
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+.nav .brand-logo{
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+nav .brand-logo{
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+ /* Icone de exlusão */
+.center  {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 12px;
+}
+
 /*detalhe evento  */
 
 .card-detalhe-geral{

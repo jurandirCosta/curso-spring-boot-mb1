@@ -28,8 +28,8 @@ public class Evento implements Serializable{
 	private String data;
 	@NotEmpty
 	private String horario;
-	
-	@OneToMany( mappedBy="evento", cascade=CascadeType.ALL, orphanRemoval=true)
+		
+	@OneToMany( mappedBy="evento", cascade=CascadeType.ALL)
 	private List<Convidado> convidados;
 	
 	public Long getCodigo() {
@@ -68,6 +68,34 @@ public class Evento implements Serializable{
 	}
 	public void setConvidados(List<Convidado> convidados) {
 		this.convidados = convidados;
+	}
+	
+	public boolean isNovo() {
+		return codigo == null;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Evento other = (Evento) obj;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		return true;
 	}
 	
 	

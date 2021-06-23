@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR"
-	xmlns="http//www.w3.org/1999/xhtml"
-	xmlns:th="http://thymeleaf.org">
+      xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equip="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	
-	<title>Cadastro de Eventos</title>
-	 <!--Import Google Icon Font-->
-      <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" />
-      <!--Import materialize.css-->
+	<title th:if="${evento.isNovo}">Cadastro de Eventos</title>
+	<title th:unless="${evento.isNovo}">Edição de Evento</title>
+	
+      <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
       <link type="text/css" rel="stylesheet" th:href="@{materialize/css/materialize.min.css}"  media="screen,projection"/>
-	  <link rel="stylesheet" th:href="@{materialize/css/styles.css}">	
-		
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <link type="text/css" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css}"/>
+	  <link rel="stylesheet" th:href="@{materialize/css/styles.css}">
 </head>
 <body>
 		<div th:insert="~{navbar :: cabecalho}"></div>
@@ -31,26 +29,32 @@
 			  		<div class="row">
 						<div class="col s12 m6 l6"><h4>Cadastro de Eventos</h4></div>
 						<div class="col s12 m6 l6">
-							<h4><a href="/eventos" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">format_list_bulleted</i> Lista de Eventos</a></h4>
+							<h5><a th:href="@{/listaEventos}" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h5>
 						</div>	
 					</div>
 			  		
-							<form method="POST" th:object="${evento} "th:action="@{/cadastrarEvento}">
+							<form method="POST" th:object="${evento}" th:action="@{/cadastrarEvento}">
+							   				    
+						 <!--   th:action="${evento.novo} ? @{/cadastrarEvento} : @{/editarEvento/{codigo}(evento.codigo)}"> -->
+							   				    
+								
+								<input type="hidden" th:field="*{codigo}"/>
+							
 								<div class="input-field col s12">
 									<input type="text" name="nome" th:field="*{nome}" id="nome" class="autocomplete"/>
-									<label for="nome">nome</label>
+									<label for="nome"></label>
 								</div>
 								<div class="input-field col s12">
 								   <input type="text"  name="local" th:field="*{local}" id="local" class="autocomplete"/>
-								   <label for="nome">local</label>
+								   <label for="nome"></label>
 								</div>
 								<div class="input-field col s6">	
 									<input type="date" name="data" th:field="*{data}" id="data" class="autocomplete"/>
-									<label for="data">data</label>
+									<label for="data"></label>
 								</div>
 								<div class="input-field col s6">	
 									<input type="time" name="horario" th:field="*{horario}" id="horario" class="autocomplete"/>
-									<label for="horario">horario</label>
+									<label for="horario"></label>
 								</div>
 								<div class="row">
 									<div class="col s9 offset-s2">

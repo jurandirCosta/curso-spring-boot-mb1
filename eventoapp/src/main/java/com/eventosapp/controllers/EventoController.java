@@ -25,67 +25,91 @@ public class EventoController {
 	@Autowired
 	private ConvidadoRepository cr;
 	
-	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.GET)
-	public ModelAndView form(Evento evento) {
-		ModelAndView modelAndView = new ModelAndView("evento/formEvento");
-		modelAndView.addObject("evento", evento);
-		return modelAndView;
-	}
-
-	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
-	public String salvar(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
-		if (result.hasErrors()) {
-			attributes.addFlashAttribute("mensagem", "Verifique se os campos estão vazios ou com erros!");
-			return "redirect:/cadastrarEvento";
-		}
-		er.save(evento);
-		attributes.addFlashAttribute("mensagem", "Evento adicionado com sucesso!");
-		return "redirect:/cadastrarEvento";
-	}
-
-	@RequestMapping("/eventos")
+	
+	/* Implementação da Lista de Eventos*/
+	
+	@RequestMapping("/listaEventos")
 	public ModelAndView listaEventos() {
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView mv = new ModelAndView("listaEventos");
 		Iterable<Evento> eventos = er.findAll();
 		mv.addObject("eventos", eventos);
 		return mv;
 	}
+	
+	
+	/* Implementação de Novo Evento */
+	
+	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.GET)
+	public ModelAndView novo(Evento evento) {
+		ModelAndView modelAndView = new ModelAndView("evento/formEvento");
+		modelAndView.addObject(evento);
+		return modelAndView;
+	}
 
+	/* Implementação de Salvar Evento */
 	
-	
-	  @RequestMapping(value="/{codigo}", method=RequestMethod.GET)
-	  public ModelAndView detalhesEvento(@PathVariable("codigo") Long codigo) {
-	    Evento evento = er.findByCodigo(codigo);
-	    ModelAndView mv = new ModelAndView("evento/detalhesEvento");
-	    mv.addObject("evento", evento);
-	  
-	    Iterable<Convidado> convidados = cr.findByEvento(evento);
-	    mv.addObject("convidados", convidados);
-	    return mv;
-	  }
-	
-		
-	@RequestMapping("/deletarEvento")
-	public String deletarEvento(Long codigo){
-		Evento evento = er.findByCodigo(codigo);
-		er.delete(evento);
-		return "redirect:/eventos";
+	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
+	public ModelAndView salvar(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
+		if (result.hasErrors()) {
+			attributes.addFlashAttribute("mensagem", "Verifique se os campos estão vazios ou com erros!");
+			return novo(evento);
+		}
+		er.save(evento);
+		attributes.addFlashAttribute("mensagem", "Evento adicionado com sucesso!");
+		return new ModelAndView("redirect:/cadastrarEvento");
 	}
 	
+	
+	/* Implementação da Edição de Eventos */
+			
+	@RequestMapping(value="/editarEvento/{codigo}")
+	public ModelAndView editar(@PathVariable("codigo") Evento evento) {
+		ModelAndView modelAndView = new ModelAndView("evento/formEvento");
+		modelAndView.addObject(evento);
+		return modelAndView;
+	}
+	
+	/* Implementação da Exclusão de Eventos */
+	    
+		@RequestMapping("/deletarEvento/{codigo}")
+		public String deletarEvento(@PathVariable Long codigo,
+				RedirectAttributes attributes){
+			er.deleteById(codigo);
+			attributes.addFlashAttribute("mensagem", "Evento removido com suceso!");
+			return "redirect:/listaEventos";
+		}
+	
+	 /* Implementação do Detalhes dos Eventos e Convidados */
+	
+    @RequestMapping(value="/cadastrarConvidado/{codigo}", method=RequestMethod.GET)
+	public ModelAndView detalhesEvento(@PathVariable("codigo") Evento evento) {
+			ModelAndView mv = new ModelAndView("evento/detalhesEvento");
+			mv.addObject(evento);
+	  
+			Iterable<Convidado> convidados = cr.findByEvento(evento);
+			mv.addObject("convidados", convidados);
+			return mv;
+	  }
 
-	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)
-	public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,  BindingResult result, RedirectAttributes attributes){
+    
+	
+	/* Implementação para salvar convidado */
+
+	@RequestMapping(value="cadastrarConvidado/{codigo}", method=RequestMethod.POST)
+	public String detalhesEventoPost(@PathVariable("codigo") Long codigo, @Valid Convidado convidado,  BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
 			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
-			return "redirect:/{codigo}";
+			return "redirect:/cadastrarConvidado{codigo}";
 		}
 		Evento evento = er.findByCodigo(codigo);
 		convidado.setEvento(evento);
 		cr.save(convidado);
 		attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
-		return "redirect:/{codigo}";
+		return "redirect:/cadastrarConvidado/{codigo}";
 	}
-
+	
+	/* Implementação para deletar convidado */
+	
 	@RequestMapping("/deletarConvidado")
 	public String deletarConvidado(String rg) {
 		Convidado convidado = cr.findByRg(rg);
@@ -97,16 +121,7 @@ public class EventoController {
 		return "redirect:/" + codigo;
 	}
 	
-	/* Implementação da Edição de Eventos */
 	
-	  @RequestMapping(value="/editarEvento/{codigo}", method=RequestMethod.GET)
-	  public ModelAndView edicao(@PathVariable("codigo") Long codigo) {
-	    Evento evento = er.findByCodigo(codigo);
-	    ModelAndView mv = new ModelAndView("evento/edicao");
-	    mv.addObject("evento", evento);
-	    er.save(evento);
-	    return mv;
-	  }
 	
 	
 

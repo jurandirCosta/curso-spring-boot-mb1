@@ -7,8 +7,8 @@
   @Controller public class IndexController {
   
   @RequestMapping("/")
-  public String index() {
-	  return "index";
+  public String listaEventos() {
+	  return "listaEventos";
 	  }
   }
  
