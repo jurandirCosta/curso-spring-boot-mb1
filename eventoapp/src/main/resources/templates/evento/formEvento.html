@@ -41,19 +41,19 @@
 								<input type="hidden" th:field="*{codigo}"/>
 							
 								<div class="input-field col s12">
-									<input type="text" name="nome" th:field="*{nome}" id="nome" class="autocomplete"/>
+									<input type="text" th:field="*{nome}" id="nome" class="autocomplete" placeholder="Nome do Evento"/>
 									<label for="nome"></label>
 								</div>
 								<div class="input-field col s12">
-								   <input type="text"  name="local" th:field="*{local}" id="local" class="autocomplete"/>
-								   <label for="nome"></label>
+								   <input type="text"  name="local" th:field="*{local}" id="local" class="autocomplete" placeholder="Local"/>
+								   <label for="local"></label>
 								</div>
 								<div class="input-field col s6">	
-									<input type="date" name="data" th:field="*{data}" id="data" class="autocomplete"/>
+									<input type="text" class="datepicker" name="data" th:field="*{data}" id="data" />
 									<label for="data"></label>
 								</div>
 								<div class="input-field col s6">	
-									<input type="time" name="horario" th:field="*{horario}" id="horario" class="autocomplete"/>
+									<input type="time" name="horario" th:field="*{horario}" id="horario" class="autocomplete" placeholder="Horário"/>
 									<label for="horario"></label>
 								</div>
 								<div class="row">
@@ -73,6 +73,18 @@
 	
 	
 <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" th:src="@{materialize/js/materialize.min.js}"></script>		
+      <script type="text/javascript" th:src="@{materialize/js/materialize.min.js}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>		
 </body>
 </html>	

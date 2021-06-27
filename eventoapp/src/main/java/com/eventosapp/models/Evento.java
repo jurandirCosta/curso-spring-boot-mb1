@@ -1,6 +1,7 @@
 package com.eventosapp.models;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Evento implements Serializable{
@@ -22,10 +26,14 @@ public class Evento implements Serializable{
 	
 	@NotEmpty
 	private String nome;
+	
 	@NotEmpty
 	private String local;
-	@NotEmpty
-	private String data;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Por favor informe uma data válida")
+	private Date data;
+	
 	@NotEmpty
 	private String horario;
 		
@@ -51,12 +59,15 @@ public class Evento implements Serializable{
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	public String getData() {
+	
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	
+	public void setData(Date data) {
 		this.data = data;
 	}
+	
 	public String getHorario() {
 		return horario;
 	}
