@@ -41,20 +41,20 @@
 								<input type="hidden" th:field="*{codigo}"/>
 							
 								<div class="input-field col s12">
-									<input type="text" th:field="*{nome}" id="nome" class="autocomplete" placeholder="Nome do Evento"/>
-									<label for="nome"></label>
+									<input type="text" th:field="*{nome}" id="nome" />
+									<label for="nome">Descrição do Evento</label>
 								</div>
 								<div class="input-field col s12">
-								   <input type="text"  name="local" th:field="*{local}" id="local" class="autocomplete" placeholder="Local"/>
-								   <label for="local"></label>
+								   <input type="text"  name="local" th:field="*{local}" id="local" />
+								   <label for="local">Local</label>
 								</div>
 								<div class="input-field col s6">	
-									<input type="text" class="datepicker" name="data" th:field="*{data}" id="data" />
-									<label for="data"></label>
+									<input type="text" name="data" th:text="${#dates.format(evento.data, 'dd/MM/yyyy')}" id="data" />
+									<label for="data">Data (dd/MM/yyyy)</label>
 								</div>
 								<div class="input-field col s6">	
-									<input type="time" name="horario" th:field="*{horario}" id="horario" class="autocomplete" placeholder="Horário"/>
-									<label for="horario"></label>
+									<input type="time" name="horario" th:field="*{horario}" id="horario" />
+									<label for="horario">Horário</label>
 								</div>
 								<div class="row">
 									<div class="col s9 offset-s2">

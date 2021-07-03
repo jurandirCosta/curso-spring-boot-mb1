@@ -18,5 +18,4 @@ public class EventoappApplication {
 	public FixedLocaleResolver localeResolver() {
 		return new FixedLocaleResolver(new Locale("pt", "BR"));
 	}
-
 }

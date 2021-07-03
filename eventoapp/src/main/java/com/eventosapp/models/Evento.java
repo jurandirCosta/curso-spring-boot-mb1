@@ -30,14 +30,14 @@ public class Evento implements Serializable{
 	@NotEmpty
 	private String local;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	//@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Por favor informe uma data válida")
 	private Date data;
 	
 	@NotEmpty
 	private String horario;
 		
-	@OneToMany( mappedBy="evento", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="evento", cascade=CascadeType.ALL)
 	private List<Convidado> convidados;
 	
 	public Long getCodigo() {
@@ -59,15 +59,13 @@ public class Evento implements Serializable{
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	
+		
 	public Date getData() {
 		return data;
 	}
-	
 	public void setData(Date data) {
 		this.data = data;
 	}
-	
 	public String getHorario() {
 		return horario;
 	}

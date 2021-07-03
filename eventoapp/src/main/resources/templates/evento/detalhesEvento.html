@@ -34,42 +34,64 @@
 						<div th:each="evento : ${evento}">
 							<p> Nome: <span th:text="${evento.nome}"></span></p>
 							<p> Local: <span th:text="${evento.local}"></span></p>
-							<p> Data: <span th:text="${evento.data}"></span></p>
+							<p> Data: <span th:text="${#dates.format(evento.data, 'dd/MM/yyyy')}"></span></p>
 							<p> Horário: <span th:text="${evento.horario}"></span></p>
 						</div>
         				</div>	
  				    </div>	
 				</div>
-<!--				<div class="col s6">
+				<div class="col s6">
 				  <div class="card ">
-					<div class="card-content">
-						<form method="POST" th:object="${convidado}" >
+					<div class="card-content formConvidado">
+						<form action="#" method="POST" th:object="${convidado}"  th:action="@{/{codigo}(codigo=${evento.codigo})}" > 
 						
-							<input type="hidden" th:field="*{id}"/>
+							<input type="hidden" th:value="${codigo}" id="codigo" name="codigo"/>
+							
+							<div class="input-field col s8">
+								<input type="text"  id="nomeConvidado" name="nomeConvidado" />
+								<label for="nomeConvidado">Nome do Convidado</label>
+							</div>
 						
 							<div class="input-field col s4">
-								<input type="text" id="rg" th:field="*{rg}" />
+								<input type="text"   id="rg" name="rg"/>
 								<label for="rg">RG</label>
 							</div>
-							<div class="input-field col s8">
-								<input type="text" id="convidado" th:field="*{convidado}" />
-								<label for="convidado">Nome do Convidado</label>
-							</div>
+						
 							
 							<div class="row">
 								<div class="col s9 offset-s2">
 								 <button type="submit" class="waves-effect waves-light btn right #2979ff blue accent-3">Adicionar Convidado</button>
 								</div>
 		
-					   	</form> -->
+					   	</form> 
 					   	</div>
 					</div>   	
-	 			</div>
+	 			</div> 
+	 			
+	 	<!--		<div class="col s6">
+				  <div class="card ">
+					<div class="card-content">
+			 			
+			 			<div class="container">
+							<form method="POST" >
+								Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+								Rg: <input type="text" value=""  name="rg" placeholder="AA-00.000.000" />
+								<div class="row">
+								<div class="col s9 offset-s2">
+								 <button type="submit" class="waves-effect waves-light btn right #2979ff blue accent-3">Adicionar Convidado</button>
+								</div>
+							</form>
+						</div>
+					</div>
+	 			  </div>
+	 			</div>-->
+	 			
+	 			
+	 			
 	 		</div>
 	 	
 		 	<div class="row">
-			 	<div class="col s3 m3"></div> <!-- div vazia para centralizar -->
-	    		<div class="col s3 m6">	   
+	    		<div class="col s6 offset-s3">	   
 			 		<div class="card">
 			 		 	<div class="row">
 					 		<div class="card-content black-text center">
@@ -85,7 +107,7 @@
 							</thead>
 							<tbody>
 								<tr th:each="convidado : ${convidados}">
-									<td><span th:text="${convidado.convidado}"></span></td>
+									<td><span th:text="${convidado.nomeConvidado}"></span></td>
 									<td><span th:text="${convidado.rg}"></span></td>
 									<td class="botao-green" href=""><a><i class="material-icons green-text">update</i></a></td>
 									<td><a class="botao-red" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}">

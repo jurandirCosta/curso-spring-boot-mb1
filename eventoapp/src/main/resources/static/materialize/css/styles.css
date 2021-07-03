@@ -29,12 +29,18 @@ nav .brand-logo{
 	padding-right:10px;
 }
 
- /* Icone de exlusão */
+th.left{
+	padding-right: 25px;
+}
+
+ /* Icone de exclusão */
 .center  {
     text-align: center;
     padding-top: 10px;
     margin-top: 12px;
 }
+
+
 
 /*detalhe evento  */
 
